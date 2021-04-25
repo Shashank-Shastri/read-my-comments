@@ -17,3 +17,5 @@ export const speak = text => {
         }, 200);
     })
 }
+
+export const sendMessage = message => new Promise(resolve => chrome.runtime.sendMessage({ message }, result => resolve(chrome.runtime.lastError ? chrome.runtime.lastError : result)))
